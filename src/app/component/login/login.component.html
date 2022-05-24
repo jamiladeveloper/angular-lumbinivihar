@@ -1,0 +1,20 @@
+<div class="container text-center d-flex align-items-center justify-content-center">
+    <form [formGroup]="formData" (ngSubmit)="login(formData.value)">
+        <div class="md-4">
+            <div class="p-2 bg-red fcolor-white">Login Title</div>
+            <div class="p-2 bg-lightgray">
+                <label class="visually-hidden" for="inline-form-id">User Id</label>
+                <input type="text" class="form-control" id="inline-form-id" placeholder="User Id"
+                    formControlName="userId">
+            </div>
+            <div class="p-2 bg-lightgray">
+                <label class="visually-hidden" for="inline-form-pwd">Password</label>
+                <input type="text" class="form-control" id="inline-form-pwd" placeholder="Password"
+                    formControlName="password">
+            </div>
+            <div class="p-2 bg-lightgray">
+                <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+        </div>
+    </form>
+</div>
