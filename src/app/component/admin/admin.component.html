@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Lumbini Buddha Vihar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/events">Events</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/donations">Donations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                <li class="nav-item" *ngIf="isadmin">
+                    <a class="nav-link" href="/admin">Admin</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="row">
+    <div class="col-md-2">
+        <div class="row" (click)="displayAnnouncements()">Announcements</div>
+        <div class="row" (click)="displayNews()">News</div>
+        <div class="row" (click)="displayEvents()">Events</div>
+        <div class="row" (click)="displayMembers()">Members</div>
+        <div class="row" (click)="displayDonations()">Donations</div>
+    </div>
+    <div class="col-md-10">
+        <app-admin-announcement *ngIf="showAnnouncements"></app-admin-announcement>
+        <app-admin-news *ngIf="showNews"></app-admin-news>
+        <app-admin-events *ngIf="showEvents"></app-admin-events>
+        <app-admin-members *ngIf="showMembers"></app-admin-members>
+        <app-admin-donations *ngIf="showDonations"></app-admin-donations>
+    </div>
+</div>
