@@ -20,6 +20,14 @@ import { DonationService } from './services/donation.service';
 import { EventService } from './services/event.service';
 import { MemberService } from './services/member.service';
 import { NewsService } from './services/news.service';
+import { AboutComponent } from './component/about/about.component';
+import { MembersComponent } from './component/members/members.component';
+import { AdminComponent } from './component/admin/admin.component';
+import { AdminAnnouncementComponent } from './component/admin-announcement/admin-announcement.component';
+import { AdminNewsComponent } from './component/admin-news/admin-news.component';
+import { AdminEventsComponent } from './component/admin-events/admin-events.component';
+import { AdminMembersComponent } from './component/admin-members/admin-members.component';
+import { AdminDonationsComponent } from './component/admin-donations/admin-donations.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +38,15 @@ import { NewsService } from './services/news.service';
     AnnouncementComponent,
     EventsComponent,
     NewsComponent,
-    DonationComponent
+    DonationComponent,
+    AboutComponent,
+    MembersComponent,
+    AdminComponent,
+    AdminAnnouncementComponent,
+    AdminNewsComponent,
+    AdminEventsComponent,
+    AdminMembersComponent,
+    AdminDonationsComponent
   ],
   imports: [
     BrowserModule,

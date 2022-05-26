@@ -1,1 +1,12 @@
-<p>announcement works!</p>
+<div class="announcement">
+    <div class="heading"><h3>Announcements</h3></div>
+    <div>
+        <ul class="list">
+            <li *ngFor="let announcement of announcements">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12"><strong>{{announcement.timestamp}} / {{announcement.title}}:</strong> {{announcement.description}}</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+.events {
+    z-index: 50;
+}
+.event {
+    position: absolute;
+    z-index: 1;
+    top: 150px;
+    left: 150px;
+    height: 600px;
+    width: 900px;
+    border: solid 1px gray;
+    background-color: lightgrey;
+}

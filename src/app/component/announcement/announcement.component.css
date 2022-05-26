@@ -1,0 +1,7 @@
+.announcement {
+    margin: 20px;
+}
+.announcement .heading {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 15px;
+}

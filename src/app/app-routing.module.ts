@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminComponent } from './component/admin/admin.component';
 import { AnnouncementComponent } from './component/announcement/announcement.component';
 import { DonationComponent } from './component/donation/donation.component';
 import { EventsComponent } from './component/events/events.component';
@@ -13,9 +14,11 @@ const routes: Routes = [
   { path : 'login', component : LoginComponent },
   { path : 'home', component : HomeComponent, canActivate : [AuthGuard] },
   { path : 'announcement', component : AnnouncementComponent, canActivate : [AuthGuard] },
-  { path : 'donation', component : DonationComponent, canActivate : [AuthGuard] },
+  { path : 'donations', component : DonationComponent, canActivate : [AuthGuard] },
   { path : 'events' , component : EventsComponent, canActivate : [AuthGuard] },
   { path : 'news', component : NewsComponent, canActivate : [AuthGuard] },
+  { path : 'about', component : NewsComponent, canActivate : [AuthGuard] },
+  { path : 'admin', component : AdminComponent, canActivate : [AuthGuard] },
   { path : '', redirectTo : '/home', pathMatch : 'full' },
   { path : '**', component : NotfoundComponent }
 ];
