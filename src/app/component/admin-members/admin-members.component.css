@@ -1,0 +1,15 @@
+.addmember {
+    margin-top: 50px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+.addmember .isadmin {
+    margin-left: 0px;
+}
+.addmember .isadminlabel {
+    margin-left: 10px;
+}
+.showmember {
+    margin-top: 50px;
+    margin-left: 150px;
+}

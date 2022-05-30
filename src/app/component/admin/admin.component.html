@@ -26,19 +26,19 @@
         </div>
     </div>
 </nav>
-<div class="row">
-    <div class="col-md-2">
-        <div class="row" (click)="displayAnnouncements()">Announcements</div>
-        <div class="row" (click)="displayNews()">News</div>
-        <div class="row" (click)="displayEvents()">Events</div>
-        <div class="row" (click)="displayMembers()">Members</div>
-        <div class="row" (click)="displayDonations()">Donations</div>
-    </div>
-    <div class="col-md-10">
-        <app-admin-announcement *ngIf="showAnnouncements"></app-admin-announcement>
-        <app-admin-news *ngIf="showNews"></app-admin-news>
-        <app-admin-events *ngIf="showEvents"></app-admin-events>
-        <app-admin-members *ngIf="showMembers"></app-admin-members>
-        <app-admin-donations *ngIf="showDonations"></app-admin-donations>
+<div class="container-fluid adminscreen">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="row" (click)="displayAnnouncements()">Announcements</div>
+            <div class="row" (click)="displayEvents()">Events</div>
+            <div class="row" (click)="displayMembers()">Members</div>
+            <div class="row" (click)="displayDonations()">Donations</div>
+        </div>
+        <div class="col-md-10 adminbody">
+            <app-admin-announcement *ngIf="showAnnouncements"></app-admin-announcement>
+            <app-admin-events *ngIf="showEvents"></app-admin-events>
+            <app-admin-members *ngIf="showMembers"></app-admin-members>
+            <app-admin-donations *ngIf="showDonations"></app-admin-donations>
+        </div>
     </div>
 </div>

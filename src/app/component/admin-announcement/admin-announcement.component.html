@@ -1,1 +1,28 @@
-<p>admin-announcement works!</p>
+<div class="row">
+    <form [formGroup]="formData" (ngSubmit)="submitAnnouncement(formData.value)">
+        <div class="md-4">
+            <div class="p-2 bg-red fcolor-white">Add Announcement</div>
+            <div class="p-2 bg-lightgray">
+                <label class="visually-hidden" for="inline-form-id">Title</label>
+                <input type="text" class="form-control" id="inline-form-id" placeholder="Title"
+                    formControlName="title">
+            </div>
+            <div class="p-2 bg-lightgray">
+                <label class="visually-hidden" for="inline-form-mobile">Description</label>
+                <input type="text" class="form-control" id="inline-form-mobile" placeholder="Details"
+                    formControlName="phone">
+            </div>
+            <div class="p-2 bg-lightgray">
+                <button type="submit" class="btn btn-primary">Add Member</button>
+            </div>
+            <div class="p-2">{{serviceMsg}}</div>
+        </div>
+    </form>
+</div>
+<div class="row announcementlist">
+    <ul>
+        <li *ngFor="let announcement of announcements">
+            {{announcement.title}}
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,10 @@
+.adminscreen {
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-right: 70px;
+}
+
+.adminscreen .adminbody {
+    margin-top: 70px;
+    width: 30%;
+}

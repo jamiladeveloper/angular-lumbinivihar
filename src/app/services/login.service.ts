@@ -10,29 +10,14 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
 
-  memberDetails: any;
+  authenticate(username: string, password: string) : Observable<any> {
 
-  data : any = {
-    "collection": "members",
-    "database": "lumbini",
-    "dataSource": "Cluster0",
-    "filter": {}
-  };
+    var postBody = {
+      'phone': username,
+      'password': password
+    }
 
-  authenticate(username: string, password: string) {
-
-    //this.memberDetails = this.getMember(username);
-
-    //console.log(this.memberDetails);
-
-    //if(this.memberDetails.password === password) {
-      localStorage.removeItem('isauthenticated');
-      localStorage.setItem('isauthenticated', 'true');
-      localStorage.setItem('user', username);
-      localStorage.setItem('admin', 'true');
-      return true;
-    //}
-    //return false;
+    return this.http.post("http://localhost:8080/authenticate", postBody);
   }
 
   isAuthenticated() {
@@ -41,25 +26,4 @@ export class LoginService {
     }
     return false;
   }
-
-  /*create(data : any): Observable<any> {
-    return this.http.post(baseUrl, data);
-  }
-  
-  update(id : string, data : any): Observable<any> {
-    return this.http.put(`${baseUrl}/${id}`, data);
-  }
-
-  delete(id : string): Observable<any> {
-    return this.http.delete(`${baseUrl}/${id}`);
-  }
-
-  deleteAll(): Observable<any> {
-    return this.http.delete(baseUrl);
-  }
-
-  findByKey(key : string, value : string): Observable<any> {
-    return this.http.get(`${baseUrl}?${key}=${value}`);
-  }*/
-
 }

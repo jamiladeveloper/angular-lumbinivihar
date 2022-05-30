@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MemberService } from 'src/app/services/member.service';
 
 @Component({
   selector: 'app-members',
@@ -9,17 +10,21 @@ export class MembersComponent implements OnInit {
 
   members : any = '';
 
-  constructor() { }
+  constructor(private memberService : MemberService) { }
 
   ngOnInit(): void {
-    this.members = [
-      {'id': '1', 'name': 'Sukhdev Ghade', 'designation': 'Chairman'},
-      {'id': '2', 'name': 'Ravindra Ghade', 'designation': 'President'},
-      {'id': '3', 'name': 'Hemant Ghade', 'designation': 'Vice President'},
-      {'id': '4', 'name': 'Prakash Ingle', 'designation': 'Member'},
-      {'id': '5', 'name': 'Amoghdarshini', 'designation': 'Member'},
-      {'id': '6', 'name': 'Vikram Prasad', 'designation': 'Treasurer'}
-    ]
+    this.getAllMembers();
+  }
+
+  getAllMembers() {
+    this.memberService.getAllMembers().subscribe(
+      result => {
+        this.members = result;
+        console.log(this.members);
+      },
+      error => {
+        console.log(error);
+      });
   }
 
 }

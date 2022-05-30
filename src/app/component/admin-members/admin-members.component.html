@@ -1,1 +1,51 @@
-<p>admin-members works!</p>
+<div class="row">
+    <div class="col-md-6">
+        <button class="btn btn-danger" (click)="addMember()">Add member</button>
+    </div>
+    <div class="col-md-6">
+        <button class="btn btn-danger" (click)="updateMember()">Update member</button>
+    </div>
+</div>
+<div class="row addmember" *ngIf="showAddMember">
+    <form [formGroup]="formData" (ngSubmit)="submitMember(formData.value)">
+        <div class="md-4">
+            <div class="p-2 bg-red fcolor-white">Add Member</div>
+            <div class="p-2 bg-lightgray">
+                <label class="visually-hidden" for="inline-form-id">Full Name</label>
+                <input type="text" class="form-control" id="inline-form-id" placeholder="Full Name"
+                    formControlName="name">
+            </div>
+            <div class="p-2 bg-lightgray">
+                <label class="visually-hidden" for="inline-form-mobile">Mobile No.</label>
+                <input type="text" class="form-control" id="inline-form-mobile" placeholder="Mobile No."
+                    formControlName="phone">
+            </div>
+            <div class="p-2 bg-lightgray">
+                <label class="visually-hidden" for="inline-form-pwd">Password</label>
+                <input type="text" class="form-control" id="inline-form-pwd" placeholder="Password"
+                    formControlName="password">
+            </div>
+            <div class="p-2 bg-lightgray">
+                <label class="visually-hidden" for="inline-form-id">Address</label>
+                <input type="text" class="form-control" id="inline-form-id" placeholder="District and State"
+                    formControlName="address">
+            </div>
+            <div class="p-2 bg-lightgray form-check">
+                <label class="isadminlabel form-check-label" for="flexCheckDefault">Is Admin</label>
+                <input class="isadmin form-check-ilnput" type="checkbox" value="" id="flexCheckDefault"
+                    formControlName="admin">
+            </div>
+            <div class="p-2 bg-lightgray">
+                <button type="submit" class="btn btn-primary">Add Member</button>
+            </div>
+            <div class="p-2">{{serviceMsg}}</div>
+        </div>
+    </form>
+</div>
+<div class="row showmember" *ngIf="showUpdateMember">
+    <ul>
+        <li *ngFor="let member of members">
+            <a (click)="showMember(member.id)">{{member.name}}</a>
+        </li>
+    </ul>
+</div>
